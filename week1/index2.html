@@ -74,7 +74,7 @@
                     }
                 });
 				
-				//Print out the Gas Price
+				// Print out the Gas Price
 				function printGasPrice(gasPrice) {
 					var gasPriceText = document.getElementById('gasPrice');
 					gasPriceText.insertAdjacentHTML('beforeend', gasPrice);
@@ -95,20 +95,10 @@
                     cell5.innerHTML = block['transactions'].length;
                 }
             }
-            function showTransactions(number) {
-                let provider = ethers.getDefaultProvider();
-                console.log(number);
-                
-                provider.getBlock(number).then((block) => {
-                    console.log(block.transactions);
-                    for (var i = 0; i < block.transactions.length; i++) {
-                        provider.getTransaction(block.transactions[i]).then((transaction) => {
-                            console.log(transaction);
-                            printTransaction(transaction); 
-                        });
-                        
-                    }
-                });
+				// Print out transaction number
+				function showTransactions(number) {
+					let provider = ethers.getDefaultProvider();
+					console.log(number);
                 
             }
         </script>
